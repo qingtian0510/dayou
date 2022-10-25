@@ -2,6 +2,7 @@ package com.evan.wj;
 
 import com.evan.wj.dao.InsUserFansDao;
 import com.evan.wj.pojo.InsUserFans;
+import com.evan.wj.service.InsAccountService;
 import com.evan.wj.service.InsUserFansService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ public class MyRunner implements CommandLineRunner {
 //    private InsUserFansDao insUserFansDao;
     @Autowired
     InsUserFansService insUserFansService;
+    @Autowired
+    InsAccountService insAccountService;
 
     @Override
     public void run(String... args) throws Exception {
@@ -48,6 +51,7 @@ public class MyRunner implements CommandLineRunner {
 //        insUserFansDao.deleteAllInBatch();
 //
 //        logger.info("# of cities: {}", insUserFansDao.count());
-        insUserFansService.getFansByNameAndCountAndStore("qingtian42", 12);
+//        insUserFansService.getFansByNameAndCountAndStore("qingtian42", 12);
+        insAccountService.addAccountFromFile("/Users/tianbo/IdeaProjects/wj/src/main/java/com/evan/wj/data/account_20.txt");
     }
 }

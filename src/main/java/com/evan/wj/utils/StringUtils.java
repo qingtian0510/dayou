@@ -1,5 +1,7 @@
 package com.evan.wj.utils;
 
+import org.junit.Test;
+
 import java.util.Random;
 
 public class StringUtils {
@@ -12,5 +14,13 @@ public class StringUtils {
             sb.append(base.charAt(number));
         }
         return sb.toString();
+    }
+
+    public static boolean isString(String str){
+
+        if (str == null || str.trim().length() == 0) {
+            return false;
+        }
+        return true;
     }
 }

@@ -50,12 +50,12 @@ public class InsUserFansService {
         List<InsUserFans> fans_list = new ArrayList<>();
         for (int i=0; i<jsonArray.size(); i++){
             JSONObject object = jsonArray.getJSONObject(i);
-            Long id = object.getLong("id");
+            String user_id = object.getString("id");
             String name = object.getString("name");
             String full_name = object.getString("full_name");
             String pic = object.getString("pic");
-            System.out.println("parse data, id:" + id + ",name:" + name + ",full_name:" + full_name + ",pic:" + pic);
-            InsUserFans fans = new InsUserFans(id, name, full_name, pic, 0, 0, 0, "空", "2022", 0, 0, 0);
+            System.out.println("parse data, user_id:" + user_id + ",name:" + name + ",full_name:" + full_name + ",pic:" + pic);
+            InsUserFans fans = new InsUserFans(user_id, name, full_name, pic, 0, 0, 0, "空", "2022", 0, 0, 0);
             fans_list.add(fans);
         }
         System.out.println("fans_list:" + fans_list.size());

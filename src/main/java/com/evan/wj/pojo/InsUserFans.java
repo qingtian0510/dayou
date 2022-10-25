@@ -10,33 +10,35 @@ import javax.persistence.*;
 public class InsUserFans {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;   //真实ins系统user id
+    Long id;   //自增id
+
+    String user_id;  //真实ins系统user id
 
     String name;   //用户名
     String full_name;
-    String pic;  //头像链接
 
-    public InsUserFans(Long id, String name, String full_name, String pic, int article_num, int follow_num, int fans_num, String location, String last_time, int collect_group_id, int operator_id, int collect_group_type) {
-        this.id = id;
-        this.name = name;
-        this.full_name = full_name;
-        this.pic = pic;
-        this.article_num = article_num;
-        this.follow_num = follow_num;
-        this.fans_num = fans_num;
-        this.location = location;
-        this.last_time = last_time;
-        this.collect_group_id = collect_group_id;
-        this.operator_id = operator_id;
-        this.collect_group_type = collect_group_type;
-    }
+    String pic;  //头像链接
 
     int article_num;  //帖子数量
     int follow_num; //关注量
     int fans_num;  //粉丝数量
     String location;  //地区位置
     String last_time; //最近登录时间
+
+    public InsUserFans() {
+
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
     int collect_group_id; //所在数据爬取分组
     int operator_id; //采集任务创建人id
     int collect_group_type;  //采集类型 0：博主粉丝 1：帖子点赞 2：帖子评论
@@ -57,12 +59,23 @@ public class InsUserFans {
         this.operator_id = operator_id;
     }
 
-    public InsUserFans() {
-
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public InsUserFans(String user_id, String name, String full_name, String pic, int article_num, int follow_num, int fans_num, String location, String last_time, int collect_group_id, int operator_id, int collect_group_type) {
+        this.user_id = user_id;
+        this.name = name;
+        this.full_name = full_name;
+        this.pic = pic;
+        this.article_num = article_num;
+        this.follow_num = follow_num;
+        this.fans_num = fans_num;
+        this.location = location;
+        this.last_time = last_time;
+        this.collect_group_id = collect_group_id;
+        this.operator_id = operator_id;
+        this.collect_group_type = collect_group_type;
     }
 
     public void setId(Long id) {
