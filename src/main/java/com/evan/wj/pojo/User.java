@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "user")
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 
+// 系统用户（客户、管理员）
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

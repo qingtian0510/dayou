@@ -15,11 +15,22 @@ public class InsAccountPort {
     String port_name;  //端口标识名称
     Date create_time;  //创建时间
     String remark;  //备注
+    int user_id;  //客户id，User.id
 
-    public InsAccountPort(String port_name, Date create_time, String remark) {
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    public InsAccountPort(int id, String port_name, Date create_time, String remark, int user_id) {
+        this.id = id;
         this.port_name = port_name;
         this.create_time = create_time;
         this.remark = remark;
+        this.user_id = user_id;
     }
 
     public InsAccountPort() {

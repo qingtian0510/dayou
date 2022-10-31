@@ -37,7 +37,8 @@ public class InsAccountService {
                 int port_id = 0;
                 int status = 0;
                 int login_status = 0;
-                InsAccount insAccount = new InsAccount(user_id, user_name, password, remark, upload_time, port_id, status, login_status);
+                int upload_user_id = 0;
+                InsAccount insAccount = new InsAccount(user_id, user_name, password, remark, upload_time, port_id, upload_user_id, status, login_status);
                 list.add(insAccount);
             }catch (JSONException e){
                 System.out.print("[InsAccountService][addAccountFromFile] exception:" + e.getMessage());
@@ -57,4 +58,6 @@ public class InsAccountService {
         System.out.println("add " + list.size() + " account");
         return 0;
     }
+
+    public List<InsAccount> getAccountBy
 }

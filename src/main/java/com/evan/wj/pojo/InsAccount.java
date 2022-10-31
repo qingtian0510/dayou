@@ -22,23 +22,31 @@ public class InsAccount {
     Date upload_time;  //上传时间
 
     int port_id; //所在端口id
+    int upload_user_id; //上传客户id（购买端口客户id） User.id
 
     int status; //账号状态，  0：正常 1：异常
 
     int login_status; //登录状态
 
-    public InsAccount(String user_id, String name, String password, String remark, Date upload_time, int port_id, int status, int login_status) {
+    public InsAccount(String user_id, String name, String password, String remark, Date upload_time, int port_id, int upload_user_id, int status, int login_status) {
         this.user_id = user_id;
         this.name = name;
         this.password = password;
         this.remark = remark;
         this.upload_time = upload_time;
         this.port_id = port_id;
+        this.upload_user_id = upload_user_id;
         this.status = status;
         this.login_status = login_status;
     }
 
+    public int getUpload_user_id() {
+        return upload_user_id;
+    }
 
+    public void setUpload_user_id(int upload_user_id) {
+        this.upload_user_id = upload_user_id;
+    }
 
     public InsAccount() {
 
