@@ -22,9 +22,10 @@ public class InsUserFansService {
     CallPythonService callPythonService;
 
     public int addFansList(List<InsUserFans> list){
-        for(InsUserFans fans: list){
-            insUserFansDao.save(fans);
-        }
+//        for(InsUserFans fans: list){
+//            insUserFansDao.save(fans);
+//        }
+        insUserFansDao.saveAll(list);
         return 0;
     }
 

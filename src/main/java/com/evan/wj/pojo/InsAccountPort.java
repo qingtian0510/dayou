@@ -69,4 +69,14 @@ public class InsAccountPort {
         this.remark = remark;
     }
 
+    @Override
+    public String toString() {
+        return "InsAccountPort{" +
+                "id=" + id +
+                ", port_name='" + port_name + '\'' +
+                ", create_time=" + create_time +
+                ", remark='" + remark + '\'' +
+                ", user_id=" + user_id +
+                '}';
+    }
 }

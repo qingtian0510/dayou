@@ -154,4 +154,22 @@ public class InsUserFans {
         this.collect_group_id = collect_group_id;
     }
 
+    @Override
+    public String toString() {
+        return "InsUserFans{" +
+                "id=" + id +
+                ", user_id='" + user_id + '\'' +
+                ", name='" + name + '\'' +
+                ", full_name='" + full_name + '\'' +
+                ", pic='" + pic + '\'' +
+                ", article_num=" + article_num +
+                ", follow_num=" + follow_num +
+                ", fans_num=" + fans_num +
+                ", location='" + location + '\'' +
+                ", last_time='" + last_time + '\'' +
+                ", collect_group_id=" + collect_group_id +
+                ", operator_id=" + operator_id +
+                ", collect_group_type=" + collect_group_type +
+                '}';
+    }
 }

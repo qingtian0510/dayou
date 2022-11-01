@@ -99,4 +99,17 @@ public class InsCollectGroup {
         this.operator_id = operator_id;
     }
 
+    @Override
+    public String toString() {
+        return "InsCollectGroup{" +
+                "id=" + id +
+                ", ins_user_name='" + ins_user_name + '\'' +
+                ", remark='" + remark + '\'' +
+                ", count=" + count +
+                ", count_real=" + count_real +
+                ", status=" + status +
+                ", type=" + type +
+                ", operator_id=" + operator_id +
+                '}';
+    }
 }

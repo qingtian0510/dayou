@@ -52,12 +52,24 @@ public class InsAccountService {
 
         }
 
-        for(InsAccount account: list){
-            insAccountDao.save(account);
-        }
+//        for(InsAccount account: list){
+//            insAccountDao.save(account);
+//        }
+        insAccountDao.saveAll(list);
         System.out.println("add " + list.size() + " account");
         return 0;
     }
 
-    public List<InsAccount> getAccountBy
+    public InsAccount getOneAccountByUploadUserIdAndStatus(int upload_user_id, int status){
+        java.util.Random random=new java.util.Random();
+
+        List<InsAccount> list = insAccountDao.findInsAccountsByUploadUserIdAndStatus(upload_user_id, status);
+        if(list.size() == 0){
+            return null;
+        }
+        int random_index=random.nextInt(list.size());
+        System.out.println("list size:" + list.size() + ", random index:" + random_index);
+
+        return list.get(random_index);
+    }
 }

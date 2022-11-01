@@ -23,4 +23,8 @@ public class StringUtils {
         }
         return true;
     }
+
+    public static void StringPrint(String str){
+        System.out.println(str);
+    }
 }
